@@ -19,4 +19,4 @@
 # services
 |n|name|e.g.|O/P|
 |-|----|----|---|
-|1|register|`consul services register -name shipments -address 10.0.0.30 -port 8080`<br/><br/># checkUp:<br/> `dig @127.0.0.1 -p 8600 shipments.service.consul`<br/> # output should return IP address 10.0.0.30|[<img src="https://i.imgur.com/kpyx4zP.png">](https://i.imgur.com/kpyx4zP.png)|
+|1|register|`consul services register -name shipments -address 10.0.0.30 -port 8080`<br/><br/># port 8600 - default DNS<br/># checkUp:<br/> `dig "@127.0.0.1" -p 8600 shipments.service.consul`<br/> # output should return IP address 10.0.0.30|[<img src="https://i.imgur.com/kpyx4zP.png">](https://i.imgur.com/kpyx4zP.png)<br/> O/P after dig : <br/> [<img src="https://i.imgur.com/gBYor4A.png">](https://i.imgur.com/gBYor4A.png)|
