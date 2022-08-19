@@ -4,6 +4,7 @@
 
 ## github
 1. [course2-consul-gs](https://github.com/g0t4/course2-consul-gs)
+2. [ddl-course2-consul-gs](https://codeload.github.com/g0t4/course2-consul-gs/zip/refs/heads/master)
 
 ---
 
