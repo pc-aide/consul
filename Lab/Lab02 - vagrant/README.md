@@ -7,7 +7,7 @@
 
 ---
 
-## Requirement
+## Requirements
 1. vagrant installed (msi)
 2. hypervisor platform enabled
 3. virtualBox isntalled
