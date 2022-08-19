@@ -10,7 +10,7 @@
 ## Requirements
 1. vagrant installed (msi)
 2. Hyper-V Platform enabled
-3. virtualBox isntalled
+3. virtualBox installed
 
 ---
 
@@ -18,4 +18,7 @@
 
 ---
 
-## 
+## Steps
+### 1 - virtualBox init
+1. go to the folder .\course2-consul-gs\install\vm
+2. vagrant up
