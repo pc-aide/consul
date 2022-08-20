@@ -11,7 +11,8 @@
 ## Requirements
 1. vagrant installed
 2. virtualBox installed
-3. no dockerDesktop
+3. hypervisor present (bios)
+4. no dockerDesktop
 
 ---
 
