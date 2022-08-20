@@ -22,7 +22,7 @@
 ## Steps
 ### 1 - vagrant up
 1. go to the folder .\course2-consul-gs\install\vm
-2. vagrant up (time: ~3min)
+2. vagrant up (Time: ~5min)
 [<img src="https://i.imgur.com/m9LNbaA.png">](https://i.imgur.com/m9LNbaA.png)
 
 3. outputs\virtualBox :
