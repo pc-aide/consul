@@ -39,3 +39,4 @@
 |n|name|e.g.|O/P|
 |-|----|----|---|
 |1|cluster|consul members|[<img src="https://i.imgur.com/I8Bw7yR.png">](https://i.imgur.com/I8Bw7yR.png)|
+|2|-http-addr=\<address\>|consul members -http-addr=http://192.168.56.10.8500|[<img src="https://i.imgur.com/YpCpHR3.png">](https://i.imgur.com/YpCpHR3.png)|
