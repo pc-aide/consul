@@ -30,3 +30,10 @@
 |-|----|----|---|
 |1|services|consul catalog services|[<img src="https://i.imgur.com/k61XjlH.png">](https://i.imgur.com/k61XjlH.png)|
 |2|nodes|consul catalog nodes|[<img src="https://i.imgur.com/MpShaJA.png">](https://i.imgur.com/MpShaJA.png)|
+
+---
+  
+## members
+|n|name|e.g.|O/P|
+|-|----|----|---|
+|1|cluster|consul members|[<img src="https://i.imgur.com/I8Bw7yR.png">](https://i.imgur.com/I8Bw7yR.png)|
