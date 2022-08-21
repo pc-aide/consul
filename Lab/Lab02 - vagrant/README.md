@@ -76,3 +76,9 @@ consul members CONSUL_HTTP_ADDR=http://192.168.56.10:8500
 
 Error retrieving members: Get "http://127.0.0.1:8500/v1/agent/mbers?segment=_all": dial tcp 127.0.0.1:8500: connectex: No connection could be made beceause the target machine actively refused it
 ````
+9. test
+````sh
+# now, it working
+consul members -http-addr=http://192.168.56.10:8500
+````
+[<img src="https://i.imgur.com/ZojqXAu.png">](https://i.imgur.com/ZojqXAu.png)
