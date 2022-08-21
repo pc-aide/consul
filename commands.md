@@ -8,6 +8,7 @@
 |1|version|consul version|[<img src="https://i.imgur.com/nAmjSA7.png">](https://i.imgur.com/nAmjSA7.png)|
 |2|help|consul catalog -h|||
 |3|info|consul info|[<img src="https://i.imgur.com/bMzmbkz.png">](https://i.imgur.com/bMzmbkz.png)|
+|4|autocomplete|# add a line to consul in .bashrc<br/># it'll work with new shell<br/>`consul -autocomplete-install`<br/><br/>`consul -autocomplete-uninstall`|[<img src="https://i.imgur.com/KcSQV0J.png">](https://i.imgur.com/KcSQV0J.png)<br/>tab key: <br/> [<img src="https://i.imgur.com/LJ3orP0.png">](https://i.imgur.com/LJ3orP0.png)|
 
 ---
 
