@@ -45,7 +45,8 @@ docker container run --rm -it -p 5000:5000 --name shipments weshigbee/consul2-sh
 1. checkUp docker's default bridge network
 ````ps1
 # opt: pipeline with jq
-docker network inspect bridge - it will see all our network (order: 172.17.0.2/16, shipments : 172.17.0.3/16)
+# it will see all our network (order: 172.17.0.2/16, shipments : 172.17.0.3/16)
+docker network inspect bridge 
 ````
 [<img src="https://i.imgur.com/6i5XFWL.png">](https://i.imgur.com/6i5XFWL.png)
 
