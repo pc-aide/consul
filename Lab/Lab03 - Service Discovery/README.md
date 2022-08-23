@@ -58,7 +58,7 @@ docker container exec -i -t orders bash
 ````
 [<img src="https://i.imgur.com/A8Qa2Fy.png">](https://i.imgur.com/A8Qa2Fy.png)
 
-3. change IPs
+3. own IPs
 ````ps1
 # from src#
 # -c[olor]
@@ -68,3 +68,14 @@ ip -c -4 a s
 ````
 [<img src="https://i.imgur.com/TwDwkIt.png">](https://i.imgur.com/TwDwkIt.png)
 [<img src="https://i.imgur.com/zjM4FDk.png">](https://i.imgur.com/zjM4FDk.png)
+
+4. listening
+````sh
+# -l --listening
+# from src#
+netstat -l
+````
+[<img src="https://i.imgur.com/VmHcVeT.png">](https://i.imgur.com/VmHcVeT.png)
+[<img src="https://i.imgur.com/oLIBpHC.png">](https://i.imgur.com/oLIBpHC.png)
+
+5. 
