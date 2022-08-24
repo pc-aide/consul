@@ -6,6 +6,7 @@
 1. [dockerHub-weshigbee/consul2-orders](https://hub.docker.com/r/weshigbee/consul2-orders)
 2. [dockerHub-shipments](https://hub.docker.com/r/weshigbee/consul2-shipments)
 3. [github-ogham/dog](https://github.com/ogham/dog)
+4. [github-course2-consul-gs](https://github.com/g0t4/course2-consul-gs)
 
 ---
 
@@ -93,7 +94,7 @@ docker container run --rm -it -p 3000:3000 --name orders -e "SHIPMENTS_URL=http:
 6. consul with flag dns
 ````ps1
 # default port dns: 8600
-docker container run --rm -it -p 8500:8500 --name consul-dev consul agent -dev -dnsp-port 53 -client 0.0.0.0
+docker container run --rm -it -p 8500:8500 --name consul-dev consul agent -dev --dns-port 53 -client 0.0.0.0
 ````
 [<img src="https://i.imgur.com/0ZaGiTZ.png">](https://i.imgur.com/0ZaGiTZ.png)
 
@@ -132,7 +133,7 @@ docker container run --rm -it -p 3000:3000 --name orders -e "SHIPMENTS_URL=http:
 ````
 [<img src="https://i.imgur.com/QrtT8Vc.png">](https://i.imgur.com/QrtT8Vc.png)
 
-11. orders bash
+12. orders bash
 ````ps1
 docker container exec -i -t orders bash
 
@@ -144,7 +145,7 @@ cat /etc/resolv.conf
 [<img src="https://i.imgur.com/CHnWD3c.png">](https://i.imgur.com/CHnWD3c.png)
 [<img src="https://i.imgur.com/h3ihWd3.png">](https://i.imgur.com/h3ihWd3.png)
 
-12. checkUp\dig
+13. checkUp\dig
 ````ps1
 # from orders bash
 docker container exec -i -t orders bash
@@ -156,3 +157,105 @@ dig consul.service.consul # yes answer: 1 (one record)
 ````
 [<img src="https://i.imgur.com/CdTw7gc.png">](https://i.imgur.com/CdTw7gc.png)
 [<img src="https://i.imgur.com/oqA1PHV.png">](https://i.imgur.com/oqA1PHV.png)
+
+14. dog - cli tool for dns client with color
+````ps1
+docker container run --rm -i -t weshigbee/consul2-dog
+
+# to test
+docker container run --rm -i -t weshigbee/consul2-dog google.com
+
+# dog on docker consul
+docker container run --rm -i -t weshigbee/consul2-dog  "@172.17.0.3" consul.service.consul
+
+# dog on docker shipments - nothing
+docker container run --rm -i -t weshigbee/consul2-dog  "@172.17.0.3" shipments.service.consul
+
+# dog google.com - query refused
+docker container run --rm -i -t weshigbee/consul2-dog  "@172.17.0.3" google.com
+````
+[<img src="https://i.imgur.com/PH2LJrI.png">](https://i.imgur.com/PH2LJrI.png)
+[<img src="https://i.imgur.com/95cq7ii.png">](https://i.imgur.com/95cq7ii.png)
+[<img src="https://i.imgur.com/thtf1pV.png">](https://i.imgur.com/thtf1pV.png)
+[<img src="https://i.imgur.com/MwA3DdZ.png">](https://i.imgur.com/MwA3DdZ.png)
+[<img src="https://i.imgur.com/SgViBTJ.png">](https://i.imgur.com/SgViBTJ.png)
+
+15. register : shipments
+````ps1
+# consul register : 172.17.0.4 - shipments
+# (opt: filter): docker network inpect bridge | jq "[].Containers"
+consul services register -name shipments -address 172.17.0.4
+````
+[<img src="https://i.imgur.com/actwUDU.png">](https://i.imgur.com/actwUDU.png)
+[<img src="https://i.imgur.com/mN1VZ8t.png">](https://i.imgur.com/mN1VZ8t.png)
+
+16. checkUp - catalog
+````ps1
+consul catalog services
+````
+[<img src="https://i.imgur.com/dtmzvMo.png">](https://i.imgur.com/dtmzvMo.png)
+
+17. checkUp - dns client
+````ps1
+# checkUp: dog on shipments - reply: yes
+docker container run --rm -it weshigbee/consul2-dog "@172.17.0.3" shipments.service.consul
+````
+[<img src="https://i.imgur.com/ukjvlCP.png">](https://i.imgur.com/ukjvlCP.png)
+
+---
+
+### DNS recursion
+1. checkUp - error - normal via /httpbin/get
+[<img src="https://i.imgur.com/0c3wdeu.png">](https://i.imgur.com/0c3wdeu.png)
+[<img src="https://i.imgur.com/lEkzWTa.png">](https://i.imgur.com/lEkzWTa.png)
+
+2. kill off our consul-dev with flag dns
+````ps1
+# kill off -dns-port 53 from the consul-dev
+# dns 1.1.1.1 - cloudFlare
+# refresh dns recursor - it'll work
+docker container run --rm -it -p 8500:8500 --name consul-dev consul agent -dev --dns-port 53 -client 0.0.0.0 -recursor 1.1.1.1
+````
+[<img src="https://i.imgur.com/wYpVX3P.png">](https://i.imgur.com/wYpVX3P.png)
+
+3. checkup - dog consul-dev
+````ps1
+# checkUp - dog on the consul-dev
+docker container run --rm -it weshigbee/consul2-dog "@172.17.0.3" httpbin.org
+
+# checkUp - dog on google
+ docker container run --rm -it weshigbee/consul2-dog "@172.17.0.3" google.com 
+````
+[<img src="https://i.imgur.com/8kxASZB.png">](https://i.imgur.com/8kxASZB.png)
+[<img src="https://i.imgur.com/sWQQR9y.png">](https://i.imgur.com/sWQQR9y.png)
+
+4. query
+````ps1
+# query - dog on the shipments - not response - because we running consul-dev mode
+docker container run --rm -it weshigbee/consul2-dog "@172.17.0.3" shipments.service.consul
+````
+
+5. stop consul-dev flag
+````ps1
+git clone https://github.com/g0t4/course2-consul-gs.git
+````
+6. go to discover\files\compse.yml
+7. kill off all containers (consul-dev, orders, & shipments
+8. checkUp if any container running ...
+````ps1
+# ps --process
+# -a --all
+docker container ps -a
+cd .\course2-consul-gs\discover\files\
+````
+[<img src="https://i.imgur.com/IVh3LWm.png">](https://i.imgur.com/IVh3LWm.png)
+
+9. docker compose up
+````ps1
+docker compose up
+````
+[<img src="https://i.imgur.com/eUOBWUv.png">](https://i.imgur.com/eUOBWUv.png)
+
+10. checkUp: orders, shipments & consul-dev in our browser
+[<img src="https://i.imgur.com/KFdYeGD.png">](https://i.imgur.com/KFdYeGD.png)
+[<img src="https://i.imgur.com/DzG9ApN.png">](https://i.imgur.com/DzG9ApN.png)
