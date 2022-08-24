@@ -259,3 +259,9 @@ docker compose up
 10. checkUp: orders, shipments & consul-dev in our browser
 [<img src="https://i.imgur.com/KFdYeGD.png">](https://i.imgur.com/KFdYeGD.png)
 [<img src="https://i.imgur.com/DzG9ApN.png">](https://i.imgur.com/DzG9ApN.png)
+
+11. docker compose restart
+````ps1
+# restart docker if update discover\files\confg\agnet.hcl - eg. add port dns 53
+docker compose restart consul-dev
+````
