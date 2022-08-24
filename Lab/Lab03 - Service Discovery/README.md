@@ -265,3 +265,9 @@ docker compose up
 # restart docker if update discover\files\confg\agnet.hcl - eg. add port dns 53
 docker compose restart consul-dev
 ````
+
+12. docker compose down - destroy
+````ps1
+docker compose down
+````
+[<img src="https://i.imgur.com/6Bnfi3E.png">](https://i.imgur.com/6Bnfi3E.png)
