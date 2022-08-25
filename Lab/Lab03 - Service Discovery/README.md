@@ -271,3 +271,4 @@ docker compose restart consul-dev
 docker compose down
 ````
 [<img src="https://i.imgur.com/6Bnfi3E.png">](https://i.imgur.com/6Bnfi3E.png)
+[<img src="https://i.imgur.com/Ot9DJCC.png">](https://i.imgur.com/Ot9DJCC.png)
