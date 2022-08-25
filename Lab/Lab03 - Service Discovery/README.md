@@ -272,3 +272,14 @@ docker compose down
 ````
 [<img src="https://i.imgur.com/6Bnfi3E.png">](https://i.imgur.com/6Bnfi3E.png)
 [<img src="https://i.imgur.com/Ot9DJCC.png">](https://i.imgur.com/Ot9DJCC.png)
+
+---
+
+### smtp
+1. sends email notification
+
+[<img src="https://i.imgur.com/MOTKkVF.png">](https://i.imgur.com/MOTKkVF.png)
+
+2. order submitted, email sent - ubu-docker
+
+[<img src="https://i.imgur.com/2pqUJkn.png">](https://i.imgur.com/2pqUJkn.png)
