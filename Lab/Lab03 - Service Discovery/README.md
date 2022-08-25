@@ -283,3 +283,54 @@ docker compose down
 2. order submitted, email sent - ubu-docker
 
 [<img src="https://i.imgur.com/2pqUJkn.png">](https://i.imgur.com/2pqUJkn.png)
+
+3. signal up consul-dev if you add smtp file hcl
+````ps1
+ docker compose kill -s SIGHUP consul-dev
+````
+[<img src="https://i.imgur.com/qmZuGKG.png">](https://i.imgur.com/qmZuGKG.png)
+
+4. in course2-consul-gs\discover\files\compose.yml\Ln35..Ln42 uncoment if commented
+````ps1
+# -d --detach
+docker compose up mails -d
+````
+
+[<img src="https://i.imgur.com/J2rLQjA.png">](https://i.imgur.com/J2rLQjA.png)
+
+5. go to http://127.0.0.1:8025/ - mailHog
+
+[<img src="https://i.imgur.com/TCVWCav.png">](https://i.imgur.com/TCVWCav.png)
+[<img src="https://i.imgur.com/AakauBq.png">](https://i.imgur.com/AakauBq.png)
+
+---
+
+### deregister
+1. start discover\files\dereg.sh
+````ps1
+consul services deregister -id shipments
+# or, same thing :
+consul services deregister conf/shipments.service.hcl
+
+# monitoring - open second terminal
+consul monitor
+
+# to get again - shipments
+consul reload
+````
+[<img src="https://i.imgur.com/0GjjRLw.png">](https://i.imgur.com/0GjjRLw.png)
+[<img src="https://i.imgur.com/ixzY0ZQ.png">](https://i.imgur.com/ixzY0ZQ.png)
+
+2. register new instance
+````ps1
+# not exist the instance ship2
+# must be another name that shipments - so ship2
+consul services register -name shipments -id ship2 -address 172.18.0.50
+````
+[<img src="https://i.imgur.com/2gGEY8d.png">](https://i.imgur.com/2gGEY8d.png)
+
+3. remove all
+````ps1
+# -v --detach the volume 
+docker compose down -v
+````
