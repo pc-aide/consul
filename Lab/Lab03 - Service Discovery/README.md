@@ -334,3 +334,4 @@ consul services register -name shipments -id ship2 -address 172.18.0.50
 # -v --detach the volume 
 docker compose down -v
 ````
+[<img src="https://i.imgur.com/3GjOHmN.png">](https://i.imgur.com/3GjOHmN.png)
