@@ -8,3 +8,4 @@
 |1|paxos -> raft (alogorithm)||
 |2|gossip protocol|
 |3|serf|Serf (hashicorp) is a decentralized solution for cluster membership, failure detection, and orchestration. Lightweight and highly available.||[<img src="https://i.imgur.com/UBhcZSm.png">](https://i.imgur.com/UBhcZSm.png)|
+|4|REST API|||
