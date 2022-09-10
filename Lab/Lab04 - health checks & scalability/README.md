@@ -46,3 +46,9 @@ docker compose up ship2
 [<img src="https://i.imgur.com/jRhluBf.png">](https://i.imgur.com/jRhluBf.png)
 [<img src="https://i.imgur.com/CUWrpLK.png">](https://i.imgur.com/CUWrpLK.png)
 [<img src="https://i.imgur.com/RzAxnjv.png">](https://i.imgur.com/RzAxnjv.png)
+
+
+4. wipeout
+````zsh
+./cleanup.sh
+````
