@@ -3,9 +3,10 @@
 ---
 
 ## Requirement
-1. jq
-2. watch
-3. dog
+1. consul
+2. jq
+3. watch
+4. dog
 
 ---
 
