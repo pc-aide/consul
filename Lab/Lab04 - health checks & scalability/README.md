@@ -3,7 +3,9 @@
 ---
 
 ## Requirement
-1. consul installed
+1. jq
+2. watch
+3. dog
 
 ---
 
@@ -29,8 +31,7 @@ docker compose up
 [<img src="https://i.imgur.com/uLbHfPA.png">](https://i.imgur.com/uLbHfPA.png)
 
 2. run check\app\checks.sh
-````sh
-# permission for docker
-sudo checks.sh
+````zsh
+checks.sh
 ````
-[<img src="https://i.imgur.com/uWguM2D.png">](https://i.imgur.com/uWguM2D.png)
+
