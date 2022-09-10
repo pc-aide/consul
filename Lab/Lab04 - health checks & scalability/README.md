@@ -33,6 +33,6 @@ docker compose up
 
 2. run check\app\checks.sh
 ````zsh
-checks.sh
+./checks.sh
 ````
-
+[<img src="https://i.imgur.com/PUmTVfz.png">](https://i.imgur.com/PUmTVfz.png)
