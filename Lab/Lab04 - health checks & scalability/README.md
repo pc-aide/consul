@@ -36,3 +36,13 @@ docker compose up
 ./checks.sh
 ````
 [<img src="https://i.imgur.com/PUmTVfz.png">](https://i.imgur.com/PUmTVfz.png)
+
+3. my ship2 in error because not init instance
+````zsh
+# -d --default detach
+# optional: docker compose stop ship2
+docker compose up ship2
+````
+[<img src="https://i.imgur.com/jRhluBf.png">](https://i.imgur.com/jRhluBf.png)
+[<img src="https://i.imgur.com/CUWrpLK.png">](https://i.imgur.com/CUWrpLK.png)
+[<img src="https://i.imgur.com/RzAxnjv.png">](https://i.imgur.com/RzAxnjv.png)
