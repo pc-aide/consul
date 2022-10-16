@@ -55,3 +55,4 @@
 |n|name|e.g.|O/P|
 |-|----|----|---|
 |1|keyprefix|watch value in kv <br/>`consul watch -type keyprefix -prefix /`<br/>`consul watch -type keyprefix -prefix / jq`|[<img src="https://i.imgur.com/4CtJsNh.png">](https://i.imgur.com/4CtJsNh.png)|
+|2|services|`consul watch -type services jq`||
