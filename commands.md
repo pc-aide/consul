@@ -64,3 +64,4 @@
 |-|----|----|---|
 |1|list|consul config list -ind service-intentions||
 |2|write|consul config write conf/centries/deny.orders.shipments.hcl|[<img src="https://i.imgur.com/81LjeHZ.png">](https://i.imgur.com/81LjeHZ.png)|
+|3|read|consul config read -kind service-intentions -name shipments|[<img src="https://i.imgur.com/9fNlxo7.png">](https://i.imgur.com/9fNlxo7.png)|
