@@ -12,6 +12,17 @@
 
 ---
 
+## netstat
+````sh
+# ports
+# 8500 - console
+# - dns
+netstat -ntpl
+````
+[<img src="https://i.imgur.com/04FhzGE.png">](https://i.imgur.com/04FhzGE.png)
+
+---
+
 ## basic
 |n|name|e.g.|O/P|
 |-|----|----|---|
