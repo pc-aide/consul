@@ -2,6 +2,11 @@
 
 ---
 
+## Acronym
+1. kv --key/value
+
+---
+
 ## jq
 * jq -format jasonScrip with color between key & value
 
@@ -66,3 +71,17 @@
 |1|list|consul config list -ind service-intentions||
 |2|write|consul config write conf/centries/deny.orders.shipments.hcl|[<img src="https://i.imgur.com/81LjeHZ.png">](https://i.imgur.com/81LjeHZ.png)|
 |3|read|consul config read -kind service-intentions -name shipments|[<img src="https://i.imgur.com/9fNlxo7.png">](https://i.imgur.com/9fNlxo7.png)|
+
+---
+  
+## kv
+### get
+|n|name|e.g.|O/P|
+|-|----|----|---|
+|1|recurse|`consul kv get -recurse`|[<img src="https://i.imgur.com/IfgCvh3.png">](https://i.imgur.com/IfgCvh3.png)|
+|2|keys|# keys = folders <br/>`consul kv get -keys`|[<img src="https://i.imgur.com/CIwI6ai.png">](https://i.imgur.com/CIwI6ai.png)|
+  
+### put
+|n|name|e.g.|O/P|
+|-|----|----|---|
+|1|default|`consul kv put demo/admin: password`<br/><br/>`consul kv put demo "admin: password"`|[<img src="https://i.imgur.com/E80gYDp.png">](https://i.imgur.com/E80gYDp.png)<br/>[<img src="https://i.imgur.com/DHSzNNz.png">](https://i.imgur.com/DHSzNNz.png)<br/>[<img src="https://i.imgur.com/z7m2w49.png">](https://i.imgur.com/z7m2w49.png)|
