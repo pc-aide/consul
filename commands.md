@@ -48,7 +48,7 @@ netstat -ntpl
 
 ### join
 |n|name|e.g.|O/P|
-|-|----|e.g.|O/P|
+|-|----|----|---|
 |1|default|# syntax: consul agent -join <SRV_IP> -bind <Client_IP> -data-dir /path/dir <br/>`consul agent -join 143.110.208.81 -bind 68.183.197.37 -data-dir /root/consul`|[<img src="https://i.imgur.com/5BDdFCT.png">](https://i.imgur.com/5BDdFCT.png)[<img src="https://i.imgur.com/Y9G3MCo.png">](https://i.imgur.com/Y9G3MCo.png)|
   
 ---  
@@ -71,7 +71,7 @@ netstat -ntpl
 ## members
 |n|name|e.g.|O/P|
 |-|----|----|---|
-|1|cluster|consul members|[<img src="https://i.imgur.com/I8Bw7yR.png">](https://i.imgur.com/I8Bw7yR.png)|
+|1|cluster|consul members|[<img src="https://i.imgur.com/I8Bw7yR.png">](https://i.imgur.com/I8Bw7yR.png)<br/>[<img src="https://i.imgur.com/jpEJSCB.png">](https://i.imgur.com/jpEJSCB.png)|
 |2|-http-addr=\<address\>|consul members -http-addr=http://192.168.56.10.8500|[<img src="https://i.imgur.com/YpCpHR3.png">](https://i.imgur.com/YpCpHR3.png)|
 
 ---
