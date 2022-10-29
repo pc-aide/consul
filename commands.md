@@ -16,6 +16,7 @@
 |4|autocomplete|# add a line to consul in .bashrc<br/># it'll work with new shell<br/>`consul -autocomplete-install`<br/><br/>`consul -autocomplete-uninstall`|[<img src="https://i.imgur.com/KcSQV0J.png">](https://i.imgur.com/KcSQV0J.png)<br/>tab key: <br/> [<img src="https://i.imgur.com/LJ3orP0.png">](https://i.imgur.com/LJ3orP0.png)|
 |5|reload|consul reload||
 |6|validate|consul validate \<path\><br/>add: data_dir = "/consul/data" in your *.hcl<br/><br/>`consul validate conf/`|[<img src="https://i.imgur.com/SjYV2AJ.png">](https://i.imgur.com/SjYV2AJ.png)<br/>with data_dir:<br/>[<img src="https://i.imgur.com/V5R9VD7.png">](https://i.imgur.com/V5R9VD7.png)|
+|7|leave|# stop consul<br/>`consul leave`|[<img src="https://i.imgur.com/4xk2vN4.png">](https://i.imgur.com/4xk2vN4.png)|
 
 ---
 
