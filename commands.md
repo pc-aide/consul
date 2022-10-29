@@ -85,3 +85,8 @@
 |n|name|e.g.|O/P|
 |-|----|----|---|
 |1|default|`consul kv put demo/admin: password`<br/><br/>`consul kv put demo "admin: password"`|[<img src="https://i.imgur.com/E80gYDp.png">](https://i.imgur.com/E80gYDp.png)<br/>[<img src="https://i.imgur.com/DHSzNNz.png">](https://i.imgur.com/DHSzNNz.png)<br/>[<img src="https://i.imgur.com/z7m2w49.png">](https://i.imgur.com/z7m2w49.png)|
+
+### delete
+|n|name|e.g.|O/P|
+|-|----|----|---|
+|1|key|`consul kv delete demo`|[<img src="https://i.imgur.com/KcfAMaE.png">](https://i.imgur.com/KcfAMaE.png)|
