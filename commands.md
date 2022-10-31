@@ -66,6 +66,13 @@ killall -s 9 consul
 |2|bind|# bind --sets the bind address for cluster communication (ports: 8300..8302)<br/>`consul agent -dev -client=0.0.0.0 -bind=34.213.45.72`||
 |3|remote_exec|# default disabled<br/>`consul agent -dev -client 0.0.0.0 -bind 143.110.208 .81 -hcl 'disable_remote_exec=false'`||
 |4|config-dir|cat /root/consul/consul-config/consul.hcl <br/> # data_dir : optional if you want not put in consul agent -data-dir=... <br/><br/> data_dir = "/root/consul" <br/> start_join = ["147.182.158.138"] <br/> bind_addr = "159.203.13.185" <br/> <br/> # from consul-client<br/>`consul agent -config-dir=root/consul-config/`||
+  
+---
+  
+### config-dir
+|n|name|e.g.|O/P|
+|-|----|----|---|
+|1|SRV & Client|# -boostrap-expect=1 --Nbr srv consul<br/> # -node --override the default : consul uses the hostname of the machine<br/> # -bind --address agent will listen : ex : -bind=SRV_IP<br/> # -data-dir --storing state data <br/> # config-dir --its configuration. default : /etc/consul.d<br/># client --the address to bind for client access. This includes RPC, DNS, HTTP, HTTPS & gRPC (if configured)<br/>`cat /root/consul/consul-server-config/consul.hcl` <br/><br/> data_dir = "/root/consul"<br/> bind_addr = "147.182.158.138"<br/> client_addr = "0.0.0.0"<br/> bootstrap_expect = 1<br/> node_name = "Consul-SRV"<br/> ui = true <br/> server = true<br/><br/>`consul agent -server -config-dir=/root/consul/consul-server-config/ &` <br/><br/> # consulVM02 = Consul-Client<br/> # consul-client-config <br/>cat /root/consul/consul-config/consul.hcl<br/><br/> data_dir = "/root/consul"<br/> start_join = ["147.182.158.138"]<br/> bind_addr = "159.203.13.185" <br/> node_name = "Consul-Client" <br/><br/> # consul-client to join to the SRV <br/> `consul agent -config-dir=/root/consul/consul-config &`|[<img src="https://i.imgur.com/zC2WvMa.png">](https://i.imgur.com/zC2WvMa.png)<br/>consul members: <br/> [<img src="https://i.imgur.com/2c8qm72.png">](https://i.imgur.com/2c8qm72.png)|
 
 ---
 
