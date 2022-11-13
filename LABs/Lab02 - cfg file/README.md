@@ -71,3 +71,5 @@ node_name = "Consul-Client"
 # start consul client-join to the srv
 consul agent -config-dir=/root/consul/consul-client-config/ &
 ````
+
+[<img src="https://i.imgur.com/ccDazhu.png">](https://i.imgur.com/ccDazhu.png)
