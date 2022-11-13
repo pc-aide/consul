@@ -1,4 +1,4 @@
-# Lab03 - config
+# Lab03 - cfg file
 
 ---
 
