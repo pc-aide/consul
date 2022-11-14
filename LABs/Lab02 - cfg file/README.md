@@ -51,6 +51,9 @@ server = true
 
 # config-dir --Configuration std location is /etc/consul.d
 consul agent -config-dir=/root/consul/consul-server-config/ &
+
+# checkUp
+netstat -ntpl
 ````
 
 ---
