@@ -38,7 +38,7 @@ consul agent -server -bootstrap-expect=1 -node=consul-srv -bind=142.93.145.48 -c
 consul members
 
 # cfg file
-# create the folder if not exist
+mkdir -p /root/consul/consul-server-config/
 vim /root/consul/consul-server-config/consul.hcl
 
 data_dir = "/root/consul"
