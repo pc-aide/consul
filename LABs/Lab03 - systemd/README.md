@@ -6,6 +6,6 @@
 
 ---
 
-## Consul client
+## Consul-SRV
 ````sh
 ````
